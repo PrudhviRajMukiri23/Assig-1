@@ -34,8 +34,8 @@ class HomePage {
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.discover).click()
-        await this.page.waitForTimeout(5000);
-        expect(await this.page.title()).toContain(this.discoverPageTitle)
+        await this.page.waitForTimeout(4000);
+        await expect(await this.page.title()).toContain(this.discoverPageTitle)
         await this.page.goBack();
     }
 
@@ -45,8 +45,8 @@ class HomePage {
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.readyForDelivery).click()
-        await this.page.waitForTimeout(5000);
-        expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
+        await this.page.waitForTimeout(4000);
+        await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
         await this.page.goBack();
     }
 }
