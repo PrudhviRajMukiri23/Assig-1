@@ -4,8 +4,8 @@
 
 This project consists on the frontend test cases on the link https://www.polestar.com/se
 
-- Implemented the Pojo model folder structure where I segregated the Hompage elements with test cases.
-- Total of three test cases were written to automate and check the 'Discover' & 'Ready For Delivery' links.
+- Implemented the Pojo model folder structure where I segregated the HomePage elements & DiscoverPage with test cases.
+- Total of four test cases were written to automate and check the 'Discover' & 'Ready For Delivery' links along with Discover page menu values printing.
 
 ### Command to run the frontend test
 

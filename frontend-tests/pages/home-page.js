@@ -1,10 +1,11 @@
 const {expect} = require('@playwright/test')
 const { timeout } = require('../../playwright.config')
+const { BASE_URL } = require('../utils/constants.js')
 
 class HomePage {
     constructor(page){
         this.page = page
-        this.url = 'https://www.polestar.com/se'
+        this.url = BASE_URL
         this.discover = "//a[@data-testid='gatsby-link' and starts-with(@href, '/se/polestar-4/')]"
         this.discoverPageTitle = 'Polestar 4 - Vår elektriska SUV-coupé | Polestar Sverige'
         this.readyForDelivery = "//a[@data-testid='not-gatsby-link' and starts-with(@href, '/se/preconfigured-cars/polestar-4/')]"
