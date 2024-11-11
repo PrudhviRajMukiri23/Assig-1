@@ -7,12 +7,24 @@ This project consists on the frontend test cases on the link https://www.polesta
 - Implemented the Pojo model folder structure where I segregated the Hompage elements with test cases.
 - Total of three test cases were written to automate and check the 'Discover' & 'Ready For Delivery' links.
 
+### Command to run the frontend test
+
+```
+npx playwright test frontend-tests/test-cases/001_test-case.spec.js
+```
+
 ## Backend Test
 
 This project consists on the backend test cases on the link https://reqres.in/
 
 - Implemented the test cases with GET, POST, PUT and DELETE http methods.
 - Total of four test cases were written to test the http methods.
+
+### Command to run the frontend test
+
+```
+npx playwright test backend-tests/test-cases/001_test-case.spec.js
+```
 
 ## k6-performance Test
 
@@ -30,7 +42,5 @@ This project consists on the k6 performance test case on the link https://www.po
 - Node.js
 - Playwright
 - JavaScript  
-- Docker & docker-compose installed
-
-## How to run the test cases
+- Docker & docker-compose installed (for k6-performance tests)
 

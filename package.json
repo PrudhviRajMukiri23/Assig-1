@@ -2,10 +2,7 @@
   "name": "plywright_test",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test:polestar-backend-tests": "npx playwright test backend-tests/test-cases/0001_test-cases.js",
-    "test:polestar-frontend-tests": "npx playwright test frontend-tests/test-cases/0001_test-cases.js"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
