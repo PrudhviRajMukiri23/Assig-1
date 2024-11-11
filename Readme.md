@@ -21,6 +21,10 @@ This project consists on the k6 performance test case on the link https://www.po
 - Implemented the GET call performance test case with virtual users of 25vu.
 - More information of this k6-performance framework in written in Readme.md file in k6-performance folder.
 
+## Azure pipeline set-up
+
+- I have configured the pipeline stages in such a way that the playwright test can run in the azure pipeline and the json report & artifacts will be published as well. We can find it in azure-pipeline.yml file
+
 ### Tech stack used
 
 - Node.js
