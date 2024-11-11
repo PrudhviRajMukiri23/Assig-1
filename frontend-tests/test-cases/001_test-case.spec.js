@@ -17,7 +17,10 @@ test('Ready For Delivery link check', async ({page})=>{
     await homepage.verifyReadyForDeliveryButton()
 })
 
+
 test('Print the side Menu values in discover page', async ({page})=>{
     const discoverpage = new DiscoverPage(page)
+    const homepage = new HomePage(page)
+    await homepage.verifyDiscoverButton()
     await discoverpage.getMenuOption()
 })

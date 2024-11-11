@@ -12,6 +12,7 @@ const { on } = require('events');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  timeout: 50000,
   testDir: '.',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -38,7 +39,7 @@ module.exports = defineConfig({
   },
 
   expect: {
-    timeout: 5000
+    timeout: 10000
   },
 
   /* Configure projects for major browsers */

@@ -10,7 +10,9 @@ This project consists on the frontend test cases on the link https://www.polesta
 ### Command to run the frontend test
 
 ```
-npx playwright test frontend-tests/test-cases/001_test-case.spec.js
+cd frontend-tests
+
+npx playwright test
 ```
 
 ## Backend Test
@@ -23,7 +25,9 @@ This project consists on the backend test cases on the link https://reqres.in/
 ### Command to run the frontend test
 
 ```
-npx playwright test backend-tests/test-cases/001_test-case.spec.js
+cd backend-tests
+
+npx playwright test
 ```
 
 ## k6-performance Test

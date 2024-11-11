@@ -5,12 +5,13 @@ const { BASE_URL } = require('../utils/constants.js')
 class DiscoverPage {
     constructor(page){
         this.page = page;
-        this.discoverCarTab = "//span[@class='css-wwd32w']"
+        this.discoverCarTab = "(//a[@data-testid='gatsby-link']/span)[1]"
         this.sideMenuLinks = "(//div[@class='css-op2z87'])[3]/ul/li"
     }
 
     async getMenuOption() {
-        await this.page.locator(this.discoverCarTab).click()
+        await this.page.waitForLoadState()
+        await this.page.getByRole('link', { name: 'Upptäck bilen' }).click();
         const links = await this.page.locator(this.sideMenuLinks)
         const count = await links.count();
         

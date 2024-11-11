@@ -31,18 +31,17 @@ class HomePage {
 
     async verifyDiscoverButton(){
         await this.page.goto(this.url)
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForLoadState()
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.discover).click()
         await this.page.waitForTimeout(4000);
         await expect(await this.page.title()).toContain(this.discoverPageTitle)
-        await this.page.goBack();
     }
 
     async verifyReadyForDeliveryButton(){
         await this.page.goto(this.url)
-        await this.page.waitForTimeout(3000);
+        await this.page.waitForLoadState()
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.readyForDelivery).click()
