@@ -14,6 +14,9 @@ class HomePage {
         this.cookieSettingsPopup = "//div[@role='dialog']/div[@class='ot-sdk-container ot-scrollbar']"
         this.acceptCookieSettingsButton = "//button[@id='onetrust-accept-btn-handler']"
         this.welcomePopupText = "WelcomeWe and our advertising"
+        this.polestar2 = "(//div[@class='css-1jof5mm']/button)[1]"
+        this.polestar2hoveredvalue = "(//div[@class='css-tyurac'])[1]/a"
+        this.polestar2Url = "https://www.polestar.com/se/polestar-2/"
     }
 
     async checkAndAcceptCookies(page) {
@@ -48,6 +51,18 @@ class HomePage {
         await this.page.waitForTimeout(4000);
         await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
         await this.page.goBack();
+    }
+
+    async mouseHoverAndClickPolestar2Car() {
+        await this.page.goto(this.url)
+        await this.page.waitForLoadState()
+        await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
+        await this.page.locator(this.acceptCookieSettingsButton).click()
+        await this.page.locator(this.polestar2).hover()
+        await this.page.waitForSelector(this.polestar2hoveredvalue)
+        await this.page.locator(this.polestar2hoveredvalue).click()
+        await this.page.waitForTimeout(4000)
+        await expect(this.page.url()).toEqual(this.polestar2Url)
     }
 }
 

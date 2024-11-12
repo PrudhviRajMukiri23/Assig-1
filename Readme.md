@@ -5,7 +5,7 @@
 This project consists on the frontend test cases on the link https://www.polestar.com/se
 
 - Implemented the Pojo model folder structure where I segregated the HomePage elements, DiscoverPage & TestDriverPage with test cases.
-- Total of five test cases were written to automate minimal sample checks in the site.
+- Total of six test cases were written to automate minimal sample checks in the polestar site.
 
 ### Command to run the frontend test
 
