@@ -56,5 +56,9 @@ This project consists on the k6 performance test case on the link https://www.po
 npm install --save-dev @playwright/test allure-playwright
 ```
 - Reports will stored in allure-results folder.
+- we need to install allure in our local and run the bvelow command to vie thw report
+```
+allure serve allure-results
+```
 
 
