@@ -1,5 +1,6 @@
 const { TEST_DRIVE_URL } = require("../utils/constants")
 const {expect} = require('@playwright/test')
+const testdata = JSON.parse(JSON.stringify(require('../../testdata.json')))
 
 class TestDriver {
     constructor(page) {
@@ -20,7 +21,7 @@ class TestDriver {
         await this.page.locator(this.car2).click()
         await this.page.waitForTimeout(2000)
 
-        await this.page.locator(this.firstName).type("hello")
+        await this.page.locator(this.firstName).fill(testdata.firstname)
         await this.page.keyboard.press("Control+A")
         await this.page.keyboard.press("Control+C")
         await this.page.keyboard.press("Backspace")
@@ -28,7 +29,7 @@ class TestDriver {
         await this.page.waitForTimeout(2000)
 
         await this.page.locator(this.lastName).focus()
-        await this.page.keyboard.type("Raj")
+        await this.page.keyboard.type(testdata.lastname)
         await this.page.keyboard.down("Shift")
         for(let i=0;i<=2;i++){
             await this.page.keyboard.press("ArrowLeft")
