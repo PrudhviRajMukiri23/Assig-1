@@ -1,0 +1,35 @@
+[
+    {
+        "id":1,
+        "firstname":"Prudhvi",
+        "lastname":"Raj",
+        "address":{
+            "state":"AP",
+            "city":"chirala",
+            "pincode":["523157","523156"],
+            "email":"p@gmail.com"
+        }
+    },
+    {
+        "id":2,
+        "firstname":"Prem",
+        "lastname":"Roi",
+        "address":{
+            "state":"AP",
+            "city":"chirala",
+            "pincode":["523157","523156"],
+            "email":"p@gmail.com"
+        }
+    },
+    {
+        "id":3,
+        "firstname":"Swaroop",
+        "lastname":"Ram",
+        "address":{
+            "state":"AP",
+            "city":"chirala",
+            "pincode":["523157","523156"],
+            "email":"p@gmail.com"
+        }
+    }
+]

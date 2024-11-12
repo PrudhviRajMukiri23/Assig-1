@@ -1,6 +1,5 @@
 const { TEST_DRIVE_URL } = require("../utils/constants")
 const {expect} = require('@playwright/test')
-const testdata = JSON.parse(JSON.stringify(require('../../testdata.json')))
 
 class TestDriver {
     constructor(page) {
@@ -16,14 +15,14 @@ class TestDriver {
         this.zipcode = "//input[@name='zipCode']"
     }
 
-    async selectDifferentValuesInDropdown() {
+    async selectDifferentValuesInDropdown(data) {
         await this.page.goto(this.url)
         await this.page.locator(this.carDropdown).click()
         await this.page.locator(this.car1).click()
         await this.page.locator(this.car2).click()
         await this.page.waitForTimeout(2000)
 
-        await this.page.locator(this.firstName).fill(testdata.firstname)
+        await this.page.locator(this.firstName).fill(data.firstname)
         await this.page.keyboard.press("Control+A")
         await this.page.keyboard.press("Control+C")
         await this.page.keyboard.press("Backspace")
@@ -31,7 +30,7 @@ class TestDriver {
         await this.page.waitForTimeout(2000)
 
         await this.page.locator(this.lastName).focus()
-        await this.page.keyboard.type(testdata.lastname)
+        await this.page.keyboard.type(data.lastname)
         await this.page.keyboard.down("Shift")
         for(let i=0;i<=2;i++){
             await this.page.keyboard.press("ArrowLeft")
@@ -43,8 +42,8 @@ class TestDriver {
 
         await expect(await this.page.locator(this.lastNameValidationErrorMessage)).toBeVisible();
 
-        await this.page.locator(this.emailvalue).fill(testdata.address.email)
-        await this.page.locator(this.zipcode).fill(testdata.address.pincode[0])
+        await this.page.locator(this.emailvalue).fill(data.address.email)
+        await this.page.locator(this.zipcode).fill(data.address.pincode[0])
         await this.page.waitForTimeout(2000)
 
     }
