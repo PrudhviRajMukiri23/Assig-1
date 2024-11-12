@@ -13,6 +13,7 @@ class TestDriver {
         this.lastName = "//input[@name='lastName']"
         this.lastNameValidationErrorMessage = "//div[@id='text-field-:R553albn9aj5:-message']"
         this.emailvalue = "//input[@name='email']"
+        this.zipcode = "//input[@name='zipCode']"
     }
 
     async selectDifferentValuesInDropdown() {
@@ -43,7 +44,9 @@ class TestDriver {
         await expect(await this.page.locator(this.lastNameValidationErrorMessage)).toBeVisible();
 
         await this.page.locator(this.emailvalue).fill(testdata.address.email)
+        await this.page.locator(this.zipcode).fill(testdata.address.pincode[0])
         await this.page.waitForTimeout(2000)
+
     }
 }
 
