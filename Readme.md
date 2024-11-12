@@ -53,12 +53,14 @@ This project consists on the k6 performance test case on the link https://www.po
 - I configured the Allure report where the vibrant and user friendly report can be generated.
 - we need to install package using below command
 ```
-npm install --save-dev @playwright/test allure-playwright
+npm install -D allure-playwright
 ```
 - Reports will stored in allure-results folder.
 - we need to install allure in our local and run the bvelow command to vie thw report
 ```
-allure serve allure-results
+allure open ./allure-report
 ```
+
+ref: https://www.npmjs.com/package/allure-playwright
 
 
