@@ -48,3 +48,13 @@ This project consists on the k6 performance test case on the link https://www.po
 - JavaScript  
 - Docker & docker-compose installed (for k6-performance tests)
 
+## Allure Report
+
+- I configured the Allure report where the vibrant and user friendly report can be generated.
+- we need to install package using below command
+```
+npm install --save-dev @playwright/test allure-playwright
+```
+- Reports will stored in allure-results folder.
+
+
