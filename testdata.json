@@ -1,4 +1,10 @@
 {
     "firstname":"Prudhvi",
-    "lastname":"Raj"
+    "lastname":"Raj",
+    "address":{
+        "state":"AP",
+        "city":"chirala",
+        "pincode":523157,
+        "email":"p@gmail.com"
+    }
 }
