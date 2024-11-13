@@ -32,6 +32,6 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: playwright-report
-    artifact: playwright-report-artifact
+    artifact: test-results
     publishLocation: 'pipeline'
   condition: succeededOrFailed()
