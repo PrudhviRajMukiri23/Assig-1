@@ -9,12 +9,12 @@ steps:
   inputs:
     versionSpec: '18'
   displayName: 'Install Node.js'
-- script: npm install
-  displayName: 'npm install'
+- script: npm ci
+  displayName: 'npm ci'
 - script: npx playwright install --with-deps
   displayName: 'Install Playwright browsers'
 - script: npx playwright test
-  displayName: 'Run Playwright tests'
+  displayName: 'Run Backend and Frontend tests'
   env:
     CI: 'true'
 
@@ -32,6 +32,6 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: playwright-report
-    artifact: playwright-report
+    artifact: playwright-report-artifact
     publishLocation: 'pipeline'
   condition: succeededOrFailed()
