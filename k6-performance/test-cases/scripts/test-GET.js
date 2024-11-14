@@ -48,8 +48,8 @@ export function projects(authToken) {
     check(
         res,
         {
-            //'is status 200': (r) => r.status === 200,
-            'is status 401?': (r) => r.status === 401,
+            'is status 200': (r) => r.status === 200,
+            //'is status 401?': (r) => r.status === 401,
         },
         { status: res.status }
     );

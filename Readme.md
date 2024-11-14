@@ -37,6 +37,23 @@ This project consists on the k6 performance test case on the link https://www.po
 - Implemented the GET call performance test case with virtual users of 25vu.
 - More information of this k6-performance framework in written in Readme.md file in k6-performance folder.
 
+### Running in windows
+
+- We need to install k6 in our windows using
+
+```
+winget install k6 
+```
+or manual installation from this repo: https://github.com/grafana/k6/releases
+
+- go to the path k6-performance/test-cases/scripts
+- run the below commans ro run script.js for windows run
+
+```
+k6 run script.js
+```
+- you will see the report like this below screenshot ![alt text](image.png)
+
 ## Azure pipeline set-up
 
 - I have configured the pipeline stages in such a way that the playwright test can run in the azure pipeline and the json report & artifacts will be published as well. We can find it in azure-pipeline.yml file
