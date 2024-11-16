@@ -37,9 +37,9 @@ This project consists on the k6 performance test case on the link https://www.po
 - Implemented the GET call performance test case with virtual users of 25vu.
 - More information of this k6-performance framework in written in Readme.md file in k6-performance folder.
 
-### Running in windows
+### Running k6 test
 
-- We need to install k6 in our windows using
+- We need to install k6 in our windows using below command
 
 ```
 winget install k6 
@@ -58,13 +58,6 @@ k6 run script.js
 
 - I have configured the pipeline stages in such a way that the playwright test can run in the azure pipeline and the json report & artifacts will be published as well. We can find it in azure-pipeline.yml file
 
-### Tech stack used
-
-- Node.js
-- Playwright
-- JavaScript  
-- Docker & docker-compose installed (for k6-performance tests)
-
 ## Allure Report
 
 - I configured the Allure report where the vibrant and user friendly report can be generated.
@@ -79,5 +72,14 @@ allure open ./allure-report
 ```
 
 ref: https://www.npmjs.com/package/allure-playwright
+
+### Tech stack used
+
+- Node.js
+- Playwright
+- JavaScript
+- k6
+- yaml 
+
 
 

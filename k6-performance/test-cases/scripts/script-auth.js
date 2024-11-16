@@ -1,11 +1,9 @@
 import http from 'k6/http';
-import { b64encode } from 'k6/encoding'
 import { check } from 'k6';
-import { exec, scenario } from 'k6/execution';
-import { uuidv4 } from 'https://jslib.k6.io/k6-utils/1.4.0/index.js';
+import { exec } from 'k6/execution';
 
 const sso_url = '';
-const app_url = '';
+const app_url = 'https://www.polestar.com/se/test-drive/booking/ps4/';
 const secrets = JSON.parse(open('./secrets.json'));
 
 export function setup() {
@@ -31,13 +29,17 @@ export const options = {
             timeUnit: '1s',
             duration: '30s',
             preAllocatedVUs: 25,
+            env: {
+                authToken: setup()
+            }
         },
     },
 };
 
-export function projects(authToken) {
+export function projects() {
+    const authToken = __ENV.authToken;
     const res = http.get(
-        `https://www.polestar.com/se/test-drive/booking/ps4/`,
+        app_url,
         {
             headers: {
                 Authorization: `Bearer ${authToken}`,

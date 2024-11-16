@@ -1,37 +1,41 @@
-  trigger:
+trigger:
 - main
 
 pool:
    vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18'
-  displayName: 'Install Node.js'
+stages:
+  -stage: Automation Testing
+  jobs:
+    - job: Playwright Test Cases
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '18'
+        displayName: 'Install Node.js'
 
-- script: npm ci
-  displayName: 'npm ci'
+      - script: npm ci
+        displayName: 'npm ci'
 
-- script: npx playwright install --with-deps
-  displayName: 'Install Playwright browsers'
-  
-- script: npx playwright test
-  displayName: 'Run Backend and Frontend tests'
-  env:
-    CI: 'true'
+      - script: npx playwright install --with-deps
+        displayName: 'Install Playwright browsers'
+        
+      - script: npx playwright test
+        displayName: 'Run Backend and Frontend tests'
+        env:
+          CI: 'true'
 
-- task: PublishTestResults@2
-  displayName: 'Assign-1 Test Results'
-  inputs:
-    searchFolder: 'test-results'
-    testResultsFormat: 'JUnit'
-    testResultsFiles: 'results.xml'
-  condition: succeededOrFailed()
-  
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: playwright-report
-    artifact: test-results
-    publishLocation: 'pipeline'
-  condition: succeededOrFailed()
+      - task: PublishTestResults@2
+        displayName: 'Assign-1 Test Results'
+        inputs:
+          searchFolder: 'test-results'
+          testResultsFormat: 'JUnit'
+          testResultsFiles: 'results.xml'
+        condition: succeededOrFailed()
+        
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: playwright-report
+          artifact: test-results
+          publishLocation: 'pipeline'
+        condition: succeededOrFailed()
