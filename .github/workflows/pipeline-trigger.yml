@@ -14,17 +14,17 @@ jobs:
   Automation_tests:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout main branch
+    - name: 'Checkout main branch'
       uses: actions/checkout@v3
       with:
         ref: 'main'
         
-    - name: Set up Node.js
+    - name: 'Set up Node.js'
       uses: actions/setup-node@v3
       with:
         node-version: '16'
 
-    - name: Install dependencies
+    - name: 'Install dependencies'
       run: npm install
 
     - name: 'Install Playwright browsers'
@@ -35,9 +35,10 @@ jobs:
       env:
         CI: 'true'
         
-    - name: Upload a Build Artifact
+    - name: 'Upload a Build Artifact'
       uses: actions/upload-artifact@v4.4.3
       with:
+        name: playwright-artifact
         path: playwright-report
 
   
