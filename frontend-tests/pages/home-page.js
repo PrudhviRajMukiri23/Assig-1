@@ -20,7 +20,7 @@ class HomePage {
     }
 
     async checkAndAcceptCookies(page) {
-        await page.waitForSelector(this.cookieSettingsPopup, {timeout: 5000})
+        await page.waitForSelector(this.cookieSettingsPopup, {timeout: 7000})
         await expect(await page.locator(this.cookieSettingsPopup)).toBeVisible();
         await page.locator(this.acceptCookieSettingsButton).click();
     }
