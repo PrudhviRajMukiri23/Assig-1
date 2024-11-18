@@ -32,7 +32,7 @@ jobs:
       run: npx playwright install --with-deps
       
     - name: 'Run Backend and Frontend tests'
-      run: npx playwright test
+      run: npx playwright test --headed
       env:
         CI: 'true'
         
@@ -41,6 +41,8 @@ jobs:
       with:
         name: playwright-artifact
         path: playwright-report
+      if: always()
+      
 
   
 
