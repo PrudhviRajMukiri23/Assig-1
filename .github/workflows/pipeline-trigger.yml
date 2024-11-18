@@ -1,8 +1,10 @@
 name: playwright-tests
 
 on:
-  # schedule:
-  #   - cron: '*/5 * * * *'
+  schedule:
+    - cron: '30 3,11 1 * *'
+    # 9:00 AM IST is 3:30 AM UTC.
+    # 5:00 PM IST is 11:30 AM UTC.
   push:
     branches:
       - main
