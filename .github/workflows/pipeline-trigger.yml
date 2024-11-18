@@ -8,10 +8,10 @@ on:
       - main
 
 jobs:
-  test_schedule:
+  Automation_tests:
     runs-on: ubuntu-latest
     steps:
-    - run: npm ci
+    - run: npm@5
       name: 'Install Node.js'
 
     - run: npx playwright install --with-deps
