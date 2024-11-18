@@ -1,16 +1,13 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
-import { vu } from 'k6/execution'
 
 export const options = {
     scenarios: {
         projects: {
             exec: 'projects',
-            executor: 'constant-arrival-rate',
-            rate: 1,
-            timeUnit: '1s',
+            executor: 'constant-vus',
+            vus: 25,
             duration: '30s',
-            preAllocatedVUs: 25,
         },
     },
 };
