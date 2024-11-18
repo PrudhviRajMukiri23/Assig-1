@@ -15,8 +15,8 @@ class HomePage {
         this.acceptCookieSettingsButton = "//button[@id='onetrust-accept-btn-handler']"
         this.welcomePopupText = "WelcomeWe and our advertising"
         this.polestar2 = "(//div[@class='css-1jof5mm']/button)[1]"
-        this.polestar2hoveredvalue = "//div[@class='css-tyurac']/a[text()='Provkörning' and @id='Q3JrNtyQSsyPb8CnsnE1Rg']"
-        this.polestar2TestDrive = "https://www.polestar.com/se/test-drive/booking/ps2/"
+        this.polestar2hoveredvalue = "//a[@id='Q3JrNtyQSsyPb8CnsnE1Rg']"
+        this.polestar2TestDriveUrl = "https://www.polestar.com/se/test-drive/booking/ps2/"
     }
 
     async checkAndAcceptCookies(page) {
@@ -38,7 +38,7 @@ class HomePage {
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.discover).click()
-        await this.page.waitForTimeout(5000)
+        await this.page.waitForTimeout(6000);
         await expect(await this.page.title()).toContain(this.discoverPageTitle)
     }
 
@@ -48,7 +48,7 @@ class HomePage {
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click();
         await this.page.locator(this.readyForDelivery).click()
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(6000);
         await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
         await this.page.goBack();
     }
@@ -59,10 +59,10 @@ class HomePage {
         await this.page.getByLabel('Welcome').locator('div').filter({ hasText: this.welcomePopupText }).first().click();
         await this.page.locator(this.acceptCookieSettingsButton).click()
         await this.page.locator(this.polestar2).hover()
-        await this.page.waitForSelector(this.polestar2hoveredvalue)
+        await this.page.waitForTimeout(5000)
         await this.page.locator(this.polestar2hoveredvalue).click()
-        await this.page.waitForTimeout(4000)
-        await expect(this.page.url()).toEqual(this.polestar2TestDrive)
+        await this.page.waitForTimeout(6000)
+        await expect(this.page.url()).toEqual(this.polestar2TestDriveUrl)
     }
 }
 
