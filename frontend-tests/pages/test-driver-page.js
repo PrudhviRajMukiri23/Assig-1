@@ -13,10 +13,14 @@ class TestDriver {
         this.lastNameValidationErrorMessage = "//div[@id='text-field-:R553albn9aj5:-message']"
         this.emailvalue = "//input[@name='email']"
         this.zipcode = "//input[@name='zipCode']"
+        this.dialogAccept="//button[text()='Accept all']"
     }
 
     async selectDifferentValuesInDropdown(data) {
         await this.page.goto(this.url)
+        await this.page.waitForTimeout(4000)
+        await this.page.locator(this.dialogAccept).click()
+        await this.page.waitForTimeout(4000)
         await this.page.locator(this.carDropdown).click()
         await this.page.locator(this.car1).click()
         await this.page.locator(this.car2).click()
