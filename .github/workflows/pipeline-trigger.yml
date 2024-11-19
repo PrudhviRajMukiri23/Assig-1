@@ -44,6 +44,14 @@ jobs:
         name: playwright-artifact
         path: playwright-report
       if: always()
+
+    - name: 'publish report'
+      uses: gmazzo/publish-report-annotations@v1.0.1
+      with:
+        reports: 'test-results/results.xml'
+        warningsAsErrors: false
+        failOnError: false
+        
       
 
   
