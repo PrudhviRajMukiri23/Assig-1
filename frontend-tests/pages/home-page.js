@@ -39,7 +39,7 @@ class HomePage {
         await this.page.waitForTimeout(4000)
         await this.page.locator(this.dialogAccept).click()
         await this.page.locator(this.discover).click()
-        await this.page.waitForTimeout(6000);
+        await this.page.waitForTimeout(5000);
         await expect(await this.page.title()).toContain(this.discoverPageTitle)
     }
 
