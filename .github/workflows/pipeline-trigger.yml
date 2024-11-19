@@ -13,7 +13,7 @@ on:
       - main
 
 jobs:
-  Automation_tests:
+  smoke_tests:
     runs-on: ubuntu-latest
     # runs-on: windows-latest
     steps:
