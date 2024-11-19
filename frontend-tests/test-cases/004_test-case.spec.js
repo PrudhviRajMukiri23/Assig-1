@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test')
+const {test} = require('@playwright/test')
 const { TestDriver } = require('../pages/test-driver-page');
 const testdata = JSON.parse(JSON.stringify(require('../../datadriventestdata.json')))
 

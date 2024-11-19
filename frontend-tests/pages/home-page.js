@@ -19,19 +19,6 @@ class HomePage {
         this.dialogAccept="//button[text()='Accept all']"
     }
 
-    async checkAndAcceptCookies(page) {
-        await page.waitForSelector(this.cookieSettingsPopup, {timeout: 7000})
-        await expect(await page.locator(this.cookieSettingsPopup)).toBeVisible();
-        await page.locator(this.acceptCookieSettingsButton).click();
-    }
-
-    async acceptCookies(){
-        await this.page.goto(this.url)
-        let title = await this.page.title()
-        expect(title).toContain(this.homePageTitle)
-        await this.checkAndAcceptCookies(this.page)
-    }
-
     async verifyDiscoverButton(){
         await this.page.goto(this.url)
         await this.page.waitForLoadState()
