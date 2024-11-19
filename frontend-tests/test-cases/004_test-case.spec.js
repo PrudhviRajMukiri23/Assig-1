@@ -1,6 +1,6 @@
 const {test} = require('@playwright/test')
 const { TestDriver } = require('../pages/test-driver-page');
-const testdata = JSON.parse(JSON.stringify(require('../../datadriventestdata.json')))
+const testdata = JSON.parse(JSON.stringify(require('../../utils/datadriventestdata.json')))
 
 test.describe('Data driven test', function() {
     for(const data of testdata){

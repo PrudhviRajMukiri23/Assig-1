@@ -6,6 +6,8 @@
 
 - node.js
 - vs code
+- k6
+- playwright
 
 ### Actions Points Covered
 
@@ -69,7 +71,7 @@ or manual installation from this repo: https://github.com/grafana/k6/releases
 ```
 k6 run script.js
 ```
-- you will see the report like this below screenshot ![alt text](image.png)
+- you will see the report like this below screenshot ![alt text](readme-images/image.png)
 
 ## Azure pipeline set-up
 
@@ -78,7 +80,7 @@ k6 run script.js
 ## GitHub Actions
 
 - I have integrated the github action pipeline also. pipeline-triggr.yml is provided under './github/workflows' path. I have published the artifactes and reports in pipleline.
-  ![image](https://github.com/user-attachments/assets/0837ac99-c49e-452b-9280-ad31ced5c6f7)
+![alt text](readme-images/image3.png)
 
 
 ## Playwright Reports
@@ -86,7 +88,7 @@ k6 run script.js
 - Playwright in-built will create the reports with screenshot and video attached an we can view it in this path 'playwright-report'
 - We need to open 'index.html' with any of the browser. It will be shown as below picture:
 
-![alt text](image-1.png)
+![alt text](readme-images/image2.png)
 
 ### Tech stack used
 

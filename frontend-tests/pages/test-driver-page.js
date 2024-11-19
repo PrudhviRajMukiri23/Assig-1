@@ -1,4 +1,4 @@
-const { BASE_URL } = require("../../constants")
+const { BASE_URL } = require("../../utils/constants")
 const {expect} = require('@playwright/test')
 
 class TestDriver {

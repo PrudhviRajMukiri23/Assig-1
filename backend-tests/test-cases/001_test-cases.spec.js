@@ -1,5 +1,5 @@
 const {test, expect, request} = require('@playwright/test');
-const { API_BASE_URL } = require('../../constants');
+const { API_BASE_URL } = require('../../utils/constants');
 const { RequestsSpec } = require('../utils/RequestsSpec');
 
 let userID = ''
