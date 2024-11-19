@@ -61,6 +61,8 @@ k6 run script.js
 ## GitHub Actions
 
 - I have integrated the github action pipeline also. pipeline-triggr.yml is provided under './github/workflows' path. I have published the artifactes and reports in pipleline.
+  ![image](https://github.com/user-attachments/assets/0837ac99-c49e-452b-9280-ad31ced5c6f7)
+
 
 ## Allure Report
 
