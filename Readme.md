@@ -58,6 +58,10 @@ k6 run script.js
 
 - I have configured the pipeline stages in such a way that the playwright test can run in the azure pipeline and the json report & artifacts will be published as well. We can find it in azure-pipeline.yml file
 
+## GitHub Actions
+
+- I have integrated the github action pipeline also. pipeline-triggr.yml is provided under './github/workflows' path. I have published the artifactes and reports in pipleline.
+
 ## Allure Report
 
 - I configured the Allure report where the vibrant and user friendly report can be generated.
