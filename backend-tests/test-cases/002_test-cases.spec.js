@@ -11,9 +11,9 @@ test("post call", async ({request}) => {
             })
         }
     );
-    console.log(await response.json());
+    console.log(await response.status());
     const res = await response.json();
     userID = await res.id;
-    console.log(userID);
+    //console.log(userID);
     expect(await response.status()).toBe(201);
 });
