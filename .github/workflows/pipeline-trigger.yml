@@ -46,11 +46,9 @@ jobs:
       if: always()
 
     - name: 'publish report'
-      uses: gmazzo/publish-report-annotations@v1.0.1
+      uses: willgeorgetaylor/junit-reducer-action@v1.7.0
       with:
-        reports: 'test-results/results.xml'
-        warningsAsErrors: false
-        failOnError: false
+        include: 'test-results/results.xml'
         
       
 
