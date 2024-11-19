@@ -95,7 +95,9 @@ k6 run script.js
 - I have included the amazing feature of playwright i.e., playwright traces.
 - We can find it in following path 'traces'
 - files will get saved with time date and test case number.
-- In pipeline we can download traces from the artifacts and view the traces.
+- In pipeline we can download traces from the artifacts and view the traces as shown below.
+
+![alt text](readme-images/image4.png)
 
 ### Playwright Traces View
 
@@ -105,7 +107,7 @@ k6 run script.js
   2. If playwright is installed in the local system we can go to the 'trace***.zip' location and run the below command
   
     ```
-    npx playeright show-trace <tracefilename.zip>
+    npx playwright show-trace <tracefilename.zip>
     ```  
 
 ### Tech stack used
