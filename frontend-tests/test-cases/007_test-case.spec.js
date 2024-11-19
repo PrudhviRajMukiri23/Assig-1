@@ -4,7 +4,7 @@ const testdata = JSON.parse(JSON.stringify(require('../../datadriventestdata.jso
 
 test.describe('Data driven test', function() {
 
-    for(const data of testdata){
+    for(let data of testdata){
 
         test.describe(`fill values of user ${data.id}`, function(){
             test('select the dropdown value, first name & validate client error', async ({page})=>{
