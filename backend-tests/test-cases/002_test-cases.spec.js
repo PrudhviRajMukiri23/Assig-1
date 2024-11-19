@@ -1,6 +1,5 @@
 const {test, expect} = require('@playwright/test');
-
-var userID;
+let {userID} = require('../utils/constants')
 
 test("post call", async ({request}) => { 
     const response = await request.post('https://reqres.in/api/users',
@@ -18,5 +17,3 @@ test("post call", async ({request}) => {
     console.log(userID);
     expect(await response.status()).toBe(201);
 });
-
-exports.userID = userID

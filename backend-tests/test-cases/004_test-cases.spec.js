@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const {userID} = require('../test-cases/002_test-cases.pec')
+const {userID} = require('../utils/constants')
 
 
 test("delete call", async ({request}) => {

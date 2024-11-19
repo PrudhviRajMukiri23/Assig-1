@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test":"npx playwright test"
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0",
     "allure-commandline": "^2.32.0",
-    "allure-playwright": "^3.0.6"
+    "allure-playwright": "^3.0.6",
+    "dotenv": "^16.4.5"
   }
 }

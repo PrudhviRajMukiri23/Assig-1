@@ -1,5 +1,5 @@
 const {test, expect} = require('@playwright/test');
-const {userID} = require('../test-cases/002_test-cases.pec')
+const {userID} = require('../utils/constants')
 
 test("put call", async ({request}) => {
     const response = await request.put(`https://reqres.in/api/users/${userID}`,
