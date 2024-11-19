@@ -32,23 +32,27 @@ jobs:
 
     - name: 'Install Playwright browsers'
       run: npx playwright install --with-deps
+
+    - name: 'Install Allure Playwright reporter'
+      run: npm install allure-playwright --save-dev
       
     - name: 'Run Backend and Frontend tests'
-      run: npx playwright test
+      run: npx playwright test --reporter=allure-playwright
       env:
         CI: 'true'
         
-    - name: 'Upload a Build Artifact'
+    - name: Upload Playwright Allure results'
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: playwright-artifact
-        path: playwright-report
+        name: allure-results
+        path: allure-results/
       if: always()
 
     - name: 'publish report - Allure report'
       uses: afiore/action-allure-report@v0.1.0
       with:
-        results-dir: 'allure-results'
+        results-dir: allure-results
+        report-dir: allure-report
         
       
 
