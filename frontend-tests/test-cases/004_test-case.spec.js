@@ -1,10 +1,14 @@
-const {test} = require('@playwright/test')
-import { DiscoverPage } from '../pages/discover-page';
-import { HomePage } from '../pages/home-page'
+const {test, expect} = require('@playwright/test')
+const { TestDriver } = require('../pages/test-driver-page');
+const testdata = JSON.parse(JSON.stringify(require('../../datadriventestdata.json')))
 
-test('Print the side Menu values in discover page', async ({page})=>{
-    const discoverpage = new DiscoverPage(page)
-    const homepage = new HomePage(page)
-    await homepage.verifyDiscoverButton()
-    await discoverpage.getMenuOption()
-})
+test.describe('Data driven test', function() {
+    for(const data of testdata){
+        test.describe(`fill values of user ${data.id}`, function(){
+            test('select the dropdown value, first name & validate client error', async ({page})=>{
+                let testDrive = new TestDriver(page);
+                await testDrive.selectDifferentValuesInDropdown(data)
+            })
+        })
+    }
+} )

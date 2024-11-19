@@ -15,7 +15,7 @@ export const options = {
 export function projects() {
     const res = http.get('https://www.polestar.com/se/test-drive/booking/ps4/')
     sleep(1)
-    //console.log(res.status)
+    console.log(res.status)
     check(res, {'is success 200':(r)=>r.status===200},{ status: res.status })
 }
 

@@ -1,7 +1,10 @@
-const {test} = require('@playwright/test')
-import { HomePage } from '../pages/home-page'
+const {test, expect} = require('@playwright/test')
+const { TestDriver } = require('../pages/test-driver-page');
+const { HomePage } = require('../pages/home-page');
+const testdata = JSON.parse(JSON.stringify(require('../../testdata.json')))
 
-test('Ready For Delivery link check', async ({page})=>{
-    const homepage = new HomePage(page)
-    await homepage.verifyReadyForDeliveryButton()
+
+test('select the dropdown value, first name & validate client error', async ({page})=>{
+    let testDrive = new TestDriver(page);
+    await testDrive.selectDifferentValuesInDropdown(testdata)
 })

@@ -1,6 +1,7 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-const { on } = require('events');
+
+const timestamp = new Date().toISOString().split('T').join('_')
 
 /**
  * Read environment variables from file.

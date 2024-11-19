@@ -1,6 +1,5 @@
 const {expect} = require('@playwright/test')
-const { timeout } = require('../../playwright.config')
-const { BASE_URL } = require('../utils/constants.js')
+const { BASE_URL } = require("../../constants")
 
 class HomePage {
     constructor(page){
@@ -52,18 +51,6 @@ class HomePage {
         await this.page.waitForTimeout(6000);
         await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
         await this.page.goBack();
-    }
-
-    async mouseHoverAndClickPolestar2Car() {
-        await this.page.goto(this.url)
-        await this.page.waitForLoadState()
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.dialogAccept).click()
-        await this.page.locator(this.polestar2).hover()
-        await this.page.waitForTimeout(5000)
-        await this.page.locator(this.polestar2hoveredvalue).click()
-        await this.page.waitForTimeout(6000)
-        await expect(this.page.url()).toContain(this.polestar2TestDriveUrl)
     }
 }
 
