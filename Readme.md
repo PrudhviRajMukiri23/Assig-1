@@ -7,11 +7,21 @@
 - node.js
 - vs code
 
+### Actions Points Covered
+
+1. Added the frontend, backed and k6-performance test cases.
+2. Implemented in Page Object Model.
+3. Implemented Data Driven Test cases.
+4. Handled the parallel execution.
+5. configured azure pipeline & gitHub Actions yaml with reports and artifacts publish feature.
+6. Documented in Readme.md file.
+7. Handled cross browser testing (chromium, firefox were enabled, we can run in any other browsers too as per our business requirement).
+8. Reports generation along with recording video feature.
+
 ## Frontend Tests
 
 This project consists on the frontend test cases on the link https://www.polestar.com/se
 
-- Implemented the Pojo model folder structure.
 - Validated the testcases to test the discover and ready for delivery links check.
 - Validated the subcription of news process for Polestar.
 
@@ -77,21 +87,6 @@ k6 run script.js
 - We need to open 'index.html' with any of the browser. It will be shown as below picture:
 
 ![alt text](image-1.png)
-
-## Allure Reports
-
-- I configured the Allure report where the vibrant and user friendly report can be generated.
-- we need to install package using below command
-```
-npm install -D allure-playwright
-```
-- Reports will stored in allure-results folder.
-- we need to install allure in our local and run the bvelow command to vie thw report
-```
-allure open ./allure-report
-```
-
-ref: https://www.npmjs.com/package/allure-playwright
 
 ### Tech stack used
 

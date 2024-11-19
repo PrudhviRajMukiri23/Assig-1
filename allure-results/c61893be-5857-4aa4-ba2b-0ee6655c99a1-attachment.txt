@@ -1,9 +1,0 @@
-Link 1: Prestanda
-Link 2: Drivlinor
-Link 3: Aerodynamik
-Link 4: Chassi
-Link 5: Stötdämpare
-Link 6: Bromsar
-Link 7: Fyrhjulsdrift eller bakhjulsdrift
-Link 8: Smidda fälgar
-Link 9: Justerbar styrrespons

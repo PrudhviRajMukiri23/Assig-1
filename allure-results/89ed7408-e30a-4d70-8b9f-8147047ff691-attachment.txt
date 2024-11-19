@@ -1,5 +1,0 @@
-{
-  name: 'morpheus',
-  job: 'zion resident',
-  updatedAt: '2024-11-13T08:47:09.679Z'
-}
