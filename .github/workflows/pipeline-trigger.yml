@@ -45,10 +45,10 @@ jobs:
         path: playwright-report
       if: always()
 
-    - name: 'publish report'
-      uses: willgeorgetaylor/junit-reducer-action@v1.7.0
+    - name: 'publish report - Allure report'
+      uses: afiore/action-allure-report@v0.1.0
       with:
-        include: 'test-results/results.xml'
+        results-dir: 'allure-results'
         
       
 
