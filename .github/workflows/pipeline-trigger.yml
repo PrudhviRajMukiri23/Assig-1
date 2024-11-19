@@ -34,7 +34,7 @@ jobs:
       run: npx playwright install --with-deps
       
     - name: 'Run Backend and Frontend tests'
-      run: npx playwright test --trace on
+      run: npx playwright test
       env:
         CI: 'true'
         
