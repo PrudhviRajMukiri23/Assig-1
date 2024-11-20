@@ -1,7 +1,13 @@
 class CookieeActions {
 
+    static instance
+
     constructor(){
+        if(CookieeActions.instance) {
+            return CookieeActions.instance
+        }
         this.dialogAccept="//button[text()='Accept all']"
+        CookieeActions.instance = this
     }
 
      async cookieAccept(page){
@@ -12,4 +18,4 @@ class CookieeActions {
 
 }
 
-exports.CookieeActions = CookieeActions
+module.exports = new CookieeActions()

@@ -13,8 +13,9 @@
 
 1. Added the frontend, backed and k6-performance test cases.
 2. Implemented in Page Object Model.
-3. Implemented Data Driven Test cases.
+3. Implemented Data-Driven Test cases.
 4. Implemented Module based test execution.
+5. Implemented Singleton class file.
 5. Handled the parallel execution.
 6. configured azure pipeline & gitHub Actions yaml with reports and artifacts publish feature.
 7. Documented in Readme.md file.

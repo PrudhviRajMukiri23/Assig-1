@@ -1,6 +1,6 @@
 const { BASE_URL } = require("../../utils/constants")
 const {expect} = require('@playwright/test')
-const { CookieeActions } = require('../module/CookieeActions')
+const cookieeActions = require('../module/CookieeActions')
 
 
 class TestDriver {
@@ -19,8 +19,7 @@ class TestDriver {
     }
 
     async performAction(page) {
-        const cookieActions = new CookieeActions();
-        await cookieActions.cookieAccept(page);
+        await cookieeActions.cookieAccept(page);
     }
 
     async subcribeToNewsOfPolestar(data) {

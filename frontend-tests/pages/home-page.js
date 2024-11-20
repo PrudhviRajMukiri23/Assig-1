@@ -1,6 +1,6 @@
 const {expect} = require('@playwright/test')
 const { BASE_URL } = require("../../utils/constants")
-const { CookieeActions } = require('../module/CookieeActions')
+const cookieeActions = require('../module/CookieeActions')
 
 class HomePage {
     constructor(page){
@@ -20,8 +20,7 @@ class HomePage {
     }
 
     async performAction(page) {
-        const cookieActions = new CookieeActions();
-        await cookieActions.cookieAccept(page);
+        await cookieeActions.cookieAccept(page);
     }
 
     async verifyDiscoverButton(){
