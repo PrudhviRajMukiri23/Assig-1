@@ -17,7 +17,7 @@ class TestDriver {
         this.confirmTestDrive="//*[contains(text(), 'Bekräfta din prenumeration')]"
     }
 
-    async selectDifferentValuesInDropdown(data) {
+    async subcribeToNewsOfPolestar(data) {
         await this.page.goto(this.url)
         await this.page.waitForSelector(this.dialogAccept)
         await this.page.locator(this.dialogAccept).click()

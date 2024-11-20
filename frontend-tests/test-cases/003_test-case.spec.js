@@ -13,7 +13,7 @@ test.beforeEach('configuring trace', async ({browser})=>{
 
 test('select the dropdown value, first name & validate client error', async ({browser})=>{
     let testDrive = new TestDriver(page);
-    await testDrive.selectDifferentValuesInDropdown(testdata)
+    await testDrive.subcribeToNewsOfPolestar(testdata)
 })
 
 test.afterEach('closing trace', async ()=>{

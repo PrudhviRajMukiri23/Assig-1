@@ -16,7 +16,7 @@ test.describe('Data driven test', function() {
 
             test('select the dropdown value, first name & validate client error', async ({browser})=>{
                 let testDrive = new TestDriver(page);
-                await testDrive.selectDifferentValuesInDropdown(data)
+                await testDrive.subcribeToNewsOfPolestar(data)
             })
 
             test.afterEach('closing trace', async ()=>{
