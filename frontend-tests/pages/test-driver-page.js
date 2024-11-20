@@ -47,6 +47,7 @@ class TestDriver {
         await this.page.locator(this.zipcode).fill(data.address.pincode[0])
         await this.page.locator(this.testDriveCheckbox).click()
         await this.page.locator(this.submitForTestDrive).click()
+        await this.page.waitForTimeout(2000)
         await this.page.waitForSelector(this.confirmTestDrive)
         await expect(this.page.locator(this.confirmTestDrive)).toBeVisible()
 
