@@ -18,7 +18,9 @@
 5. configured azure pipeline & gitHub Actions yaml with reports and artifacts publish feature.
 6. Documented in Readme.md file.
 7. Handled cross browser testing (chromium, firefox were enabled, we can run in any other browsers too as per our business requirement).
-8. Reports generation along with recording video feature.
+8. Reports generation in pipeline.
+9. Recording video and Screenshot in pipeline.
+10. Tracing the testcase ran in pipeline.
 
 ## Frontend Tests
 
