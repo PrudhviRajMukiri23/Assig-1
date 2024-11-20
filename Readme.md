@@ -37,6 +37,14 @@ cd frontend-tests
 
 npx playwright test
 ```
+### Custom Execution (using tags)
+
+- I have included the 'tag' parameter to couple of test cases. Given value as '@smoke'.
+- We can run that two specific test cases by using the tag '--grep' as shown in below command.
+
+```
+npx playwright test --grep 'smoke'
+```
 
 ## Backend Test
 

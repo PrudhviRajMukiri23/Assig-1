@@ -11,7 +11,7 @@ test.beforeEach('configuring trace', async ({browser})=>{
     page = await context.newPage()
 })
 
-test('Ready For Delivery link check', async ({browser})=>{
+test('Ready For Delivery link check', {tag: '@smoke'}, async ({browser})=>{
     const homepage = new HomePage(page)
     await homepage.verifyReadyForDeliveryButton()
 })

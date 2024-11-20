@@ -11,7 +11,7 @@ test.beforeEach('configuring trace', async ({browser})=>{
     page = await context.newPage()
 })
 
-test('Discover link check', async ()=>{
+test('Discover link check',{ tag: '@smoke'}, async ()=>{
     const homepage = new HomePage(page)
     await homepage.verifyDiscoverButton()
 })
