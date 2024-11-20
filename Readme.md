@@ -14,13 +14,14 @@
 1. Added the frontend, backed and k6-performance test cases.
 2. Implemented in Page Object Model.
 3. Implemented Data Driven Test cases.
-4. Handled the parallel execution.
-5. configured azure pipeline & gitHub Actions yaml with reports and artifacts publish feature.
-6. Documented in Readme.md file.
-7. Handled cross browser testing (chromium, firefox were enabled, we can run in any other browsers too as per our business requirement).
-8. Reports generation in pipeline.
-9. Recording video and Screenshot in pipeline.
-10. Tracing the testcase ran in pipeline.
+4. Implemented Module based test execution.
+5. Handled the parallel execution.
+6. configured azure pipeline & gitHub Actions yaml with reports and artifacts publish feature.
+7. Documented in Readme.md file.
+8. Handled cross browser testing (chromium, firefox were enabled, we can run in any other browsers too as per our business requirement).
+9. Reports generation in pipeline.
+10. Recording video and Screenshot in pipeline.
+11. Tracing the testcase ran in pipeline.
 
 ## Frontend Tests
 

@@ -1,5 +1,6 @@
 const {expect} = require('@playwright/test')
 const { BASE_URL } = require("../../utils/constants")
+const { CookieeActions } = require('../module/CookieeActions')
 
 class HomePage {
     constructor(page){
@@ -16,14 +17,17 @@ class HomePage {
         this.polestar2 = "(//div[@class='css-1jof5mm']/button)[1]"
         this.polestar2hoveredvalue = "//a[@id='Q3JrNtyQSsyPb8CnsnE1Rg']"
         this.polestar2TestDriveUrl = "https://www.polestar.com/se/test-drive/booking/ps2/"
-        this.dialogAccept="//button[text()='Accept all']"
+    }
+
+    async performAction(page) {
+        const cookieActions = new CookieeActions();
+        await cookieActions.cookieAccept(page);
     }
 
     async verifyDiscoverButton(){
         await this.page.goto(this.url)
         await this.page.waitForLoadState()
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.dialogAccept).click()
+        await this.performAction(this.page)
         await this.page.locator(this.discover).click()
         await this.page.waitForTimeout(5000);
         await expect(await this.page.title()).toContain(this.discoverPageTitle)
@@ -32,8 +36,7 @@ class HomePage {
     async verifyReadyForDeliveryButton(){
         await this.page.goto(this.url)
         await this.page.waitForLoadState()
-        await this.page.waitForTimeout(4000)
-        await this.page.locator(this.dialogAccept).click()
+        await this.performAction(this.page)
         await this.page.locator(this.readyForDelivery).click()
         await this.page.waitForTimeout(6000);
         await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)

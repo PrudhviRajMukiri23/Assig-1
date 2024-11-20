@@ -1,5 +1,7 @@
 const { BASE_URL } = require("../../utils/constants")
 const {expect} = require('@playwright/test')
+const { CookieeActions } = require('../module/CookieeActions')
+
 
 class TestDriver {
     constructor(page) {
@@ -11,16 +13,19 @@ class TestDriver {
         this.lastNameValidationErrorMessage = "//div[@id='text-field-:R553albn9aj5:-message']"
         this.emailvalue = "//input[@name='email']"
         this.zipcode = "//input[@name='zipCode']"
-        this.dialogAccept="//button[text()='Accept all']"
         this.testDriveCheckbox="//input[@type='checkbox' and @id='a4ca2ade-63dd-43c3-a17b-1f42b87db55c']"
         this.submitForTestDrive="//button[@type='submit']"
         this.confirmTestDrive="//*[contains(text(), 'Bekräfta din prenumeration')]"
     }
 
+    async performAction(page) {
+        const cookieActions = new CookieeActions();
+        await cookieActions.cookieAccept(page);
+    }
+
     async subcribeToNewsOfPolestar(data) {
         await this.page.goto(this.url)
-        await this.page.waitForSelector(this.dialogAccept)
-        await this.page.locator(this.dialogAccept).click()
+        await this.performAction(this.page)
         await this.page.locator(this.newsLetterSubcribe).click()
         await this.page.waitForTimeout(3000)
         await this.page.locator(this.firstName).focus()
