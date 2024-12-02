@@ -16,9 +16,9 @@
 3. Implemented **Data-Driven** Test cases.
 4. Implemented **Module** based test execution.
 5. Implemented **Singleton class** file.
-5. Handled the **parallel** execution (enabled 4 workers i.e., similar to 4 threads)
+5. Handled the **parallel** execution.
 6. configured **azure & gitHub Actions yaml** with reports and artifacts publish feature.
-8. Handled **cross browser testing** (chrome, firefox and edge were enabled, we can run in any other browsers too as per our business requirement).
+8. Handled **cross browser testing** (chromium, firefox were enabled, we can run in any other browsers too as per our business requirement).
 9. **Reports** generation in pipeline.
 10. Recording **video and Screenshot** in pipeline.
 11. **Tracing** the testcase ran in pipeline.
