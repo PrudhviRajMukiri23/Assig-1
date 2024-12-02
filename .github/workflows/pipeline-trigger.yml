@@ -33,11 +33,17 @@ jobs:
 
     - name: 'Install Playwright browsers'
       run: npx playwright install --with-deps
+
+    - name: 'Install Java 11 (Required for Allure)'
+      run: sudo apt-get update && sudo apt-get install -y openjdk-11-jdk   
       
     - name: 'Run Backend and Frontend tests'
       run: npx playwright test
       env:
         CI: 'true'
+  
+    - name: 'Generate Allure Report'
+      run: npx allure generate allure-results --clean --output allure-report
         
     - name: 'Upload a Build Artifact'
       uses: actions/upload-artifact@v4.4.3
@@ -48,3 +54,11 @@ jobs:
           test-results
           traces
       if: always()
+    
+    - name: Deploy Allure Report to GitHub Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-report
