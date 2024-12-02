@@ -101,6 +101,14 @@ k6 run script.js
 
 ![alt text](readme-images/image2.png)
 
+## Allure Reports
+
+- I am hosting the results of the test cases in the github pages.
+- As soon as the test cases ran, peaceiris/actions-gh-pages in yml file will automatically handle gh-pages to host my report
+- We can see the reports details as shown in below
+![alt text](readme-images/image-5.png)
+![alt text](readme-images/image-6.png)
+
 ## Playwright Traces
 
 - I have included the amazing feature of playwright i.e., playwright traces.
