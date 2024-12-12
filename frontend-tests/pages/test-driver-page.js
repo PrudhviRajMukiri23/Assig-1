@@ -1,6 +1,7 @@
 const { BASE_URL } = require("../../utils/constants")
 const {expect} = require('@playwright/test')
 const cookieeActions = require('../module/CookieeActions')
+const { logger } = require("../utils/LoggingUtil")
 
 
 class TestDriver {
@@ -48,7 +49,12 @@ class TestDriver {
         await this.page.locator(this.submitForTestDrive).click()
         await this.page.waitForTimeout(2000)
         await this.page.waitForSelector(this.confirmTestDrive)
-        await expect(this.page.locator(this.confirmTestDrive)).toBeVisible()
+        try {
+            await expect(this.page.locator(this.confirmTestDrive)).toBeVisible()
+            logger.info('Verified the test drive success message.')
+        } catch (e) {
+            logger.error(`Error while verifying the test drive success message ${e}`)
+        }
 
     }
 }

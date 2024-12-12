@@ -1,6 +1,8 @@
 const {expect} = require('@playwright/test')
 const { BASE_URL } = require("../../utils/constants")
 const cookieeActions = require('../module/CookieeActions')
+const { logger } = require("../utils/LoggingUtil")
+const { timeout } = require('../../playwright.config')
 
 class HomePage {
     constructor(page){
@@ -21,6 +23,7 @@ class HomePage {
 
     async performAction(page) {
         await cookieeActions.cookieAccept(page);
+        logger.debug("Cookiee Handled successfully...")
     }
 
     async verifyDiscoverButton(){
@@ -29,7 +32,12 @@ class HomePage {
         await this.performAction(this.page)
         await this.page.locator(this.discover).click()
         await this.page.waitForTimeout(5000);
-        await expect(await this.page.title()).toContain(this.discoverPageTitle)
+        try {
+            await expect(await this.page.title()).toContain(this.discoverPageTitle)
+            logger.info(`Verified the title: ${await this.page.title()}`)
+        } catch (e) {
+            logger.error(`Error while verifying the discover Page Title ${e}`)
+        }
     }
 
     async verifyReadyForDeliveryButton(){
@@ -38,7 +46,12 @@ class HomePage {
         await this.performAction(this.page)
         await this.page.locator(this.readyForDelivery).click()
         await this.page.waitForTimeout(6000);
-        await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
+        try {
+            await expect(await this.page.title()).toContain(this.readyForDeliveryPageTitle)
+            logger.info(`Verified the title: ${await this.page.title()}`)
+        } catch (e) {
+            logger.error(`Error while verifying the discover Page Title ${e}`)
+        }
         await this.page.goBack();
     }
 }

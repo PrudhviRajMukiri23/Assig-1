@@ -22,6 +22,7 @@
 9. **Reports** generation in pipeline.
 10. Recording **video and Screenshot** in pipeline.
 11. **Tracing** the testcase ran in pipeline.
+12. Custom **logging** in UI test case and **Error handling** in BE test cases.
 
 ## Frontend Tests
 
@@ -128,6 +129,23 @@ k6 run script.js
     ```
     npx playwright show-trace <tracefilename.zip>
     ```  
+
+### Custom logging and Error Handling
+
+- I have used _winston_ library of npm to have custom logging. Handled the generic util file for logging configuration.
+- Below are the libraries that are used:
+    ```
+    npm i winston
+
+    npm i moment-timezone
+    ```  
+- All UI test cases use the generic logging util file and log in console, and _test_run.log_ file under Logging folder.
+- I ahve used _ErrorHandler_ for BE test cases to handled any unexpected error while interacting api's.
+
+- ref: 
+  winston - logging [https://www.npmjs.com/package/winston]
+  
+  time zone - moment timezone [https://www.npmjs.com/package/moment-timezone]
 
 ### Tech stack used
 

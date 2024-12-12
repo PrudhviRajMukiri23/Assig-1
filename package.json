@@ -15,5 +15,9 @@
     "allure-commandline": "^2.32.0",
     "allure-playwright": "^3.0.6",
     "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "moment-timezone": "^0.5.46",
+    "winston": "^3.17.0"
   }
 }
