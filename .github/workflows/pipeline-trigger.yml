@@ -53,6 +53,7 @@ jobs:
           playwright-report
           test-results
           traces
+          frontend-tests/logging
       if: always()
     
     - name: Deploy Allure Report to GitHub Pages
