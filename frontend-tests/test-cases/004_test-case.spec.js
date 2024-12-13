@@ -17,7 +17,7 @@ test.describe('Data driven test', function() {
                 logger.debug("trace setup for test case 004 is completed...")
             })
 
-            test('select the dropdown value, first name & validate client error', async ({browser})=>{
+            test('Subcribbe to News of Polestar', async ()=>{
                 let testDrive = new TestDriver(page);
                 await testDrive.subcribeToNewsOfPolestar(data)
             })

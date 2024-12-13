@@ -14,7 +14,7 @@ test.beforeEach('configuring trace', async ({browser})=>{
     logger.debug("trace setup for test case 003 is completed...")
 })
 
-test('select the dropdown value, first name & validate client error', async ({browser})=>{
+test('Subcribbe to News of Polestar', async ()=>{
     let testDrive = new TestDriver(page);
     await testDrive.subcribeToNewsOfPolestar(testdata)
 })
